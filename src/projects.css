@@ -1,0 +1,22 @@
+img {
+    width: 150px;
+    height: 300px;
+    border-radius: 12px; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border: 4px solid var(--accent-color); /* Adds a border to the image */
+    box-shadow: 14px 14px 10px black; /* Subtle shadow for depth */
+    transition: all 0.3s ease-in-out;
+}
+a{
+    text-decoration: none;
+    color: whitesmoke;
+    background-image: linear-gradient( rgb(115, 201, 245), rgb(115, 137, 207), rgb(121, 163, 231));
+    line-height: 23px;
+    padding: 8px;
+    border-radius: 23px;
+    display: inline-block;
+}
+img:hover {
+    box-shadow: 0 8px 16px var(--shadow-light); /* Lighter shadow on hover */
+    transform: translateY(-5px) scale(1.05) translateX(4px); /* Slight lift and scale on hover */
+}

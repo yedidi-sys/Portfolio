@@ -1,0 +1,147 @@
+/* --- 1. Global Variables and Base Body Styles (Cleaned and Corrected) --- */
+:root { /* Corrected from --root to :root */
+    --main-bg-color: #2c2c2c; /* Darker background for a sleek look */
+    --main-text-color: #f0f0f0; /* Light text for contrast */
+    --background-color: #383838; /* Card/Container background */
+    --accent-color: #00bcd4; /* Cyan/Teal for a modern accent */
+    --shadow-light: rgba(144, 151, 144, 0.2);
+    --shadow-dark: rgba(0, 0, 0, 0.4);
+}
+
+body {
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0; /* Let the wrapper handle padding */
+    border: none; /* Removed the 2px black border around the entire body */
+    box-shadow: none; /* Removed redundant box-shadow */
+    cursor: default;
+}
+
+/* Wrapper to center content and apply padding */
+.app-wrapper {
+    padding: 1.5em;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the entire app */
+}
+
+/* Content Headings and Separator */
+.main-content {
+    text-align: center;
+}
+
+h1 {
+    margin-top: 30px;
+    color: var(--accent-color);
+    font-weight: 900;
+}
+
+.separator {
+    height: 1px;
+    background-color: var(--accent-color);
+    width: 60%;
+    margin: 20px auto 50px auto; /* Centered line with good spacing */
+}
+
+.founders-heading {
+    /* Styling to replace <h2><u><b>Founders</b></u></h2> */
+    font-size: 2em;
+    color: var(--main-text-color);
+    text-decoration: underline;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+/* --- 2. Identity Card Container (#foolos) --- */
+#foolos, #folos { /* Renamed to .identity-card-container in HTML for clarity, but kept #foolos here to match the ID */
+    display: flex;
+    align-items: flex-start; /* Aligns cards to the top */
+    justify-content: center;
+    gap: 4vw;
+    width: 100%;
+    padding: 20px;
+    margin-top: 43px;
+    border-radius: 12px;
+    background-color: var(--background-color);
+    box-shadow: 0 4px 10px var(--shadow-dark); /* Subtle shadow on the container */
+    transition: all 0.3s ease-in-out;
+}
+
+#foolos:hover , #folos:hover {
+    /* Less aggressive hover effect for the container */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    transform: translateY(-5px); /* Lift slightly on hover */
+}
+
+/* --- 3. Identity Card Image Styling (Child of #foolos) --- */
+/* Assuming the IdentityCard component renders an <img> tag directly */
+#foolos img , #folos img {
+    /* Enforce a consistent size and shape */
+    width: 150px;
+    height: 150px;
+    min-height: auto; /* Removed old constraints */
+    max-width: none;
+    object-fit: cover;
+    border-radius: 50%; /* Perfect circle */
+    border: var(--accent-color) solid 5px; /* Thicker, colored border */
+    opacity: 0.95;
+    transition: all 0.3s ease-in-out;
+    margin-left: 0; /* Removed aggressive margin */
+    box-shadow: 0 14px 18px var(--shadow-dark);
+    transform: none; /* Reset base transform */
+}
+
+#foolos img:hover , #folos img:hover {
+    box-shadow: 0 18px 16px var(--shadow-light); /* Lighter shadow on image hover */
+    opacity: 1;
+    transform: scale(1.05) rotate(3deg); /* Slight zoom and tilt */
+    background-color: #1e1e1e; /* Dark background on hover */
+}
+/* --- 4. Responsive Design Adjustments --- */
+@media (max-width: 768px) {
+    #foolos, #folos, #mine {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #foolos img , #folos img {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 15px; /* Space below image */
+    }
+}
+/* --- 5. Additional Styling for Links and Images in Projects Component --- */ 
+/* Moved from src/projects.css for centralized styling */
+#mine{
+    display: flex;
+    align-items: flex-start; /* Aligns cards to the top */
+    justify-content: center;
+    gap: 4vw;
+    width: 100%;
+    height: 140%;
+    margin-top: 43px;
+    border-radius: 12px;
+    background-color: var(--background-color);
+    box-shadow: 0 4px 10px var(--shadow-dark); /* Subtle shadow on the container */
+    transition: all 0.3s ease-in-out;
+
+}
+#mine:hover {
+    /* Less aggressive hover effect for the container */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    transform: translateY(-5px); /* Lift slightly on hover */
+}
+a:hover {
+    background-image: linear-gradient( rgb(121, 163, 231), rgb(115, 137, 207), rgb(115, 201, 245));
+    box-shadow: #1e1e1e 0 8px 16px; /* Lighter shadow on hover */
+    transform: translateY(-3px) scale(1.03); /* Slight lift and scale on hover */
+}
+p{
+    font: 300;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: oblique;
+    font-size: 18px;
+    line-height: 23px;
+
+}

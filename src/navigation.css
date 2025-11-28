@@ -1,0 +1,125 @@
+/* --- 1. Navigation Container (Cleaned and Improved) --- */
+.nav-container {
+    display: flex; /* Kept flex display */
+    justify-content: space-around; /* Distributes space nicely between logo and links */
+    align-items: center;
+    background-color: #1e1e1e; /* Very dark background */
+    padding: 10px 20px;
+    color: white;
+    line-height: normal; /* Removed aggressive line-height */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 50px; /* More modern, pill-like rounding */
+    margin: 20px auto 0 auto; /* Centered with top margin */
+    width: 90%; /* Fixed width */
+    box-shadow: 0 10px 20px var(--shadow-dark); /* Stronger shadow */
+    position: sticky;
+    top: 10px; /* Stays slightly below the top */
+    z-index: 100;
+    transition: all 0.3s ease; /* Transition on base selector */
+}
+
+.nav-container:hover {
+    background-color: #282828; /* Slightly lighter on hover */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.8);
+    /* Removed the redundant transition */
+}
+
+.nav-logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+/* --- 2. Anchor Links Styling (Cleaned) --- */
+a {
+    text-decoration: none;
+    color: white;
+    background-color: var(--accent-color); /* Use accent color for button background */
+    padding: 8px 15px;
+    margin: 8px; /* Consistent margin around links */
+    border-radius: 20px;
+    transition: filter 0.3s ease-in-out;
+}
+
+.fool:hover { /* The class for the links */
+    background-color: #0097a7; /* Darker shade of accent color on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px) scale(1.05); /* Corrected transform with units and added scale */
+    border-radius: 12px;
+    margin: 0 8px; /* Kept margin consistent */
+}
+
+/* --- 3. Navigation Links and Mobile Toggle (Added Mobile Support) --- */
+.nav-links {
+    display: flex;
+    gap: 15px; /* Replaced aggressive 0.5px gap */
+    align-items: center;
+    font-size: 1.1em;
+}
+
+.nav-toggle {
+    display: none; /* Hide the toggle button by default on desktop */
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+/* --- Media Query for Mobile Responsiveness (Crucial for NavigationBar) --- */
+@media (max-width: 768px) {
+    .nav-container {
+        justify-content: space-between;
+        width: 95%;
+        border-radius: 10px;
+    }
+
+    .nav-toggle {
+        display: block; /* Show the hamburger menu icon on mobile */
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%; /* Position below the nav-container */
+        left: 30;
+        right: 0;
+        background-color: #1e1e1e;
+        flex-direction: column; /* Stack links vertically */
+        width: 40%;
+        text-align: right;
+        justify-content: right;
+        height: 0; /* Collapsed state */
+        overflow: hidden;
+        transition: height 0.3s ease;
+        border-radius: 0 0 10px 10px;
+        padding-bottom: 0;
+        overflow: scroll;
+    }
+
+    .nav-links.open {
+        height: 250px; /* Expanded state (adjust as needed for content) */
+        padding-bottom: 10px;
+    }
+
+    .nav-links a {
+        margin: 10px 0;
+        width: 70%; /* Make links full-width buttons */
+        text-align: center;
+        display: block;
+        padding: 15px 20px;
+        text-align: center;
+}
+.nav-links:hover .fool{
+        filter: blur(4px);
+    }
+}
+.nav-links:hover .fool:hover{
+        filter: blur(0);
+        transform: scale(1.05);
+        z-index: 10;
+    }   
