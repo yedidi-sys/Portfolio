@@ -58,10 +58,6 @@ function App() {
             overview='./project2.png'
           />
         </div>
-         
-        {/* Contact Placeholder - ADDED id='contact' */}
-        <h2 className='founders-heading' id='contact' style={{ marginTop: '50px' }}>3. CONTACT</h2>
-        <p style={{ textAlign: 'center' }}>Contact information or form will go here.</p>
         <div className='separator'></div>
     </div>
   );
